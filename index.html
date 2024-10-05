@@ -42,7 +42,7 @@
     <script>
         const API_KEY = "AIzaSyAsmLvXFmR4Wcq7Vm20Lyijf3SFeSg6kQg";
         const ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${API_KEY}`;
-
+        const botName = "ChatFluxi";
         let conversationHistory = [];
 
         function cleanResponse(text) {
@@ -55,13 +55,23 @@
 
             appendMessage("You", userMessage, "user");
             conversationHistory.push(`You: ${userMessage}`);
+
+            if (userMessage.toLowerCase().includes("siapa namamu") ||
+                userMessage.toLowerCase().includes("apa nama kamu")) {
+                const responseMessage = `Namaku adalah ${botName}.`;
+                appendMessage(botName, responseMessage, "bot");
+                conversationHistory.push(`${botName}: ${responseMessage}`);
+                return;
+            }
+
             if (userMessage.toLowerCase().includes("apa yang saya tanyakan sebelumnya") ||
                 userMessage.toLowerCase().includes("sebutkan pertanyaan pertama saya")) {
                 const previousQuestions = conversationHistory.filter(msg => msg.startsWith("You:"));
                 const responseMessage = previousQuestions.length > 0
                     ? `Pertanyaan sebelumnya: "${previousQuestions[0].replace("You: ", "")}"`
                     : "Saya tidak memiliki pertanyaan sebelumnya yang bisa saya sebutkan.";
-                appendMessage("ChatFluxi", responseMessage, "bot");
+                appendMessage(botName, responseMessage, "bot");
+                conversationHistory.push(`${botName}: ${responseMessage}`);
                 return;
             }
 
@@ -87,32 +97,46 @@
                 }
 
                 const data = await response.json();
-                const botMessage = cleanResponse(data.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, I couldn't generate a response.");
-                const formattedBotMessage = botMessage.replace(/\n/g, '<br>');
-
-                conversationHistory.push(`ChatFluxi: ${botMessage}`);
-
-                setTimeout(() => {
-                    appendMessage("ChatFluxi", formattedBotMessage, "bot");
-                }, 1000);
+                const botMessage = cleanResponse(data.candidates?.[0]?.content?.parts?.[0]?.text || "Maaf, saya tidak dapat menghasilkan respon.");
+                if (userMessage.toLowerCase().includes("code") || userMessage.toLowerCase().includes("coding")) {
+                    appendMessage(botName, `<pre class="code"><code>${highlightCode(botMessage)}</code></pre>`, "code");
+                } else {
+                    const formattedBotMessage = botMessage.replace(/\n/g, '<br>');
+                    conversationHistory.push(`${botName}: ${botMessage}`);
+                    setTimeout(() => {
+                        appendMessage(botName, formattedBotMessage, "bot");
+                    }, 1000);
+                }
 
             } catch (error) {
                 console.error("Error:", error);
-                appendMessage("ChatFluxi", "Sorry, something went wrong.", "bot");
+                appendMessage(botName, "Maaf, terjadi kesalahan.", "bot");
             }
+        }
+
+        function highlightCode(code) {
+            return code
+                .replace(/(const|let|var|if|else|return|function|async|await)/g, '<span class="keyword">$1</span>')
+                .replace(/(".*?"|'.*?')/g, '<span class="string">$1</span>')
+                .replace(/(\d+)/g, '<span class="number">$1</span>')
+                .replace(/(\/\*[\s\S]*?\*\/|\/\/.*?$)/gm, '<span class="comment">$1</span>');
         }
 
         function appendMessage(sender, message, type) {
             const chatBox = document.getElementById("chat-box");
+
             const messageElement = document.createElement("div");
             messageElement.classList.add("chat-message", type);
+
             const messageContent = document.createElement("div");
             messageContent.classList.add("message-content", type);
             messageContent.innerHTML = message;
+
             const timeElement = document.createElement("div");
             timeElement.classList.add("message-time");
             const timeNow = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
             timeElement.textContent = `(${timeNow})`;
+
             messageContent.appendChild(timeElement);
             messageElement.appendChild(messageContent);
             chatBox.appendChild(messageElement);
