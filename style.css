@@ -1,5 +1,5 @@
  body {
-     background-color: #fff;
+    background-color: #f2f6fa;
      margin: 0;
      padding: 0;
      overflow-x: hidden;
@@ -30,7 +30,7 @@
  }
 
  .foouter {
-     height: calc(12vh - 20px);
+     height: calc(10vh - 20px);
      background-color: #0ad1c8;
      border-bottom-left-radius: 30px;
      border-bottom-right-radius: 30px;
@@ -61,9 +61,8 @@
  }
 
  .chat-container {
-     height: calc(90vh - 20px);
+     height: calc(85vh - 20px);
      padding: 10px;
-     background-color: #fff;
      display: flex;
      flex-direction: column;
      font-family: Arial, sans-serif;
@@ -71,8 +70,6 @@
 
  .wadah {
      height: 100%;
-     display: flex;
-     flex-direction: column;
  }
 
  .chat-box {
@@ -96,16 +93,16 @@
  }
 
  .record-btn {
-    padding: 10px;
-    width: 40px;
-    height: 40px;
-    border: none;
-    background-color: #0ad1c8;
-    color: white;
-    cursor: pointer;
-    border-radius: 50%;
-    margin-left: 10px; 
-}
+     padding: 10px;
+     width: 40px;
+     height: 40px;
+     border: none;
+     background-color: #0ad1c8;
+     color: white;
+     cursor: pointer;
+     border-radius: 50%;
+     margin-left: 10px;
+ }
 
  .message-content {
      padding: 10px;
@@ -129,14 +126,17 @@
  }
 
  .message-content.bot {
-     background-color: #f1f1f1;
+     background-color: #fff;
      color: #333;
      border-top-left-radius: 0;
  }
 
  .chat-input-container {
      display: flex;
-     margin-top: 10px;
+     align-items: center;
+     justify-content: space-between;
+     padding: 10px;
+     background-color: #fff;
  }
 
  .code {
@@ -185,6 +185,12 @@
      cursor: pointer;
      border-radius: 50%;
      margin-left: 10px;
+ }
+
+ .message-time {
+     font-size: 12px;
+     display: flex;
+     align-items: center;
  }
 
  @media (max-width: 768px) {
