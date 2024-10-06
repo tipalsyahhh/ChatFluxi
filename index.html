@@ -10,40 +10,60 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-
-    <div class="load" id="loader">
-        <div class="judul">
-            <center>
-                <img src="1.png" alt="img" class="img-load">
-                <h3>ChatFluxi</h3>
-                <p>Tanyakan yang anda ingin tau</p>
-            </center>
-        </div>
-    </div>
-    <div class="foouter">
-        <div class="isi">
-            <img src="1.png" alt="img">
-            <h3>ChatFluxi</h3>
-        </div>
-    </div>
-    <div class="chat-container">
-        <div class="wadah">
-            <div class="chat-box" id="chat-box">
+<body id="tipal">
+    <div class="container">
+        <div class="load" id="loader">
+            <div class="judul">
+                <center>
+                    <img src="1.png" alt="img" class="img-load">
+                    <h3>ChatFluxi</h3>
+                    <p>Tanyakan yang anda ingin tau</p>
+                </center>
             </div>
         </div>
-    </div>
-    <div class="chat-input-container">
-        <input type="text" id="user-input" class="chat-input" placeholder="Message ChatFluxi...">
-        <button class="send-btn" onclick="sendMessage(document.getElementById('user-input').value)">
-            <i class="bi bi-send-plus" style="font-size: 20px;"></i>
-        </button>
-        <button id="record-button" class="record-btn">
-            <i class="bi bi-mic" style="font-size: 20px;"></i>
-        </button>
+        <div class="foouter">
+            <div class="isi">
+                <img src="1.png" alt="img">
+                <h3>ChatFluxi</h3>
+            </div>
+        </div>
+        <div class="chat-container">
+            <div class="wadah">
+                <div class="chat-box" id="chat-box">
+                </div>
+            </div>
+        </div>
+        <div class="chat-input-container">
+            <input type="text" id="user-input" class="chat-input" placeholder="Message ChatFluxi...">
+            <button class="send-btn" onclick="sendMessage(document.getElementById('user-input').value)">
+                <i class="bi bi-send-plus" style="font-size: 20px;"></i>
+            </button>
+            <button id="record-button" class="record-btn">
+                <i class="bi bi-mic" style="font-size: 20px;"></i>
+            </button>
+        </div>
     </div>
     <script src="scrip.js"></script>
     <script src="api.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.js"></script>
+    <script src="vanta.net.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            VANTA.NET({
+                el: "#tipal",
+                mouseControls: true,
+                touchControls: true,
+                gyroControls: false,
+                minHeight: 200.00,
+                minWidth: 200.00,
+                scale: 1.00,
+                scaleMobile: 1.00,
+                color: 0x0ad1c8,
+                backgroundColor: 0xffffff,
+                maxDistance: 21.00
+            });
+        });
+    </script>
 
 </body>
 

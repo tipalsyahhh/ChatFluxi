@@ -1,8 +1,12 @@
  body {
-    background-color: #f2f6fa;
      margin: 0;
      padding: 0;
      overflow-x: hidden;
+ }
+
+ .container {
+    background: rgba(255, 255, 255, 0.36);
+    backdrop-filter: blur(6.4px);
  }
 
  .load {
@@ -126,7 +130,7 @@
  }
 
  .message-content.bot {
-     background-color: #fff;
+     background-color: #f2f6fa;
      color: #333;
      border-top-left-radius: 0;
  }
