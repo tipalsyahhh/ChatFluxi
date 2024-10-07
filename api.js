@@ -6,7 +6,7 @@ let recognition;
 let isMuted = false;
 
 function cleanResponse(text) {
-    return text.replace(/[*_~`]/g, "");
+    return text.replace(/[*_~`<>{}]/g, "");
 }
 
 async function sendMessage(userMessage) {
