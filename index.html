@@ -64,13 +64,23 @@
                 </div>
             </div>
         </div>
+        <div id="file-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <a href="#" id="file-upload-link" class="upload-link" style="margin-bottom: 5px;"><i class="bi bi-images" style="margin-right: 3px;"></i><p style="margin: 0;">Upload Image</p></a>
+                <a href="#" class="setting"><i class="bi bi-gear-fill" style="margin-right: 3px;"></i><p style="margin: 0;">Setting</p></a>
+            </div>
+        </div>
         <div class="chat-input-container">
-            <input type="text" id="user-input" class="chat-input" placeholder="Message ChatFluxi...">
+            <div class="input-user">
+                <button class="files" id="open-modal"><i class="bi bi-link-45deg"></i></button>
+                <input type="text" id="user-input" class="chat-input" placeholder="Message ChatFluxi...">
+                <button id="record-button" class="record-btn">
+                    <i class="bi bi-mic" style="font-size: 20px;"></i>
+                </button>
+            </div>
             <button class="send-btn" onclick="sendMessage(document.getElementById('user-input').value)">
                 <i class="bi bi-send-plus" style="font-size: 20px;"></i>
-            </button>
-            <button id="record-button" class="record-btn">
-                <i class="bi bi-mic" style="font-size: 20px;"></i>
             </button>
         </div>
     </div>
