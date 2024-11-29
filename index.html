@@ -15,16 +15,47 @@
         <div class="load" id="loader">
             <div class="judul">
                 <center>
-                    <img src="1.png" alt="img" class="img-load">
-                    <h3>ChatFluxi</h3>
-                    <p>Tanyakan yang anda ingin tau</p>
+                    <div class="spinner"></div>
                 </center>
             </div>
         </div>
         <div class="foouter">
             <div class="isi">
-                <img src="1.png" alt="img">
-                <h3>ChatFluxi</h3>
+                <div class="text">
+                    <p>NovDetect</p>
+                    <h4>Cermati Benur, Selamatkan Panen</h4>
+                </div>
+                <div class="navbar">
+                    <button class="button-navbar" id="toggleSidebar"><i class="bi bi-layout-wtf"></i></button>
+                </div>
+                <div class="sidebar" id="sidebar">
+                    <div class="sidebar-content">
+                        <div class="button-sidebar">
+                            <div class="button-close">
+                                <button class="close-sidebar" id="closeSidebar"><i class="bi bi-arrow-right-circle"></i></button>
+                            </div>
+                            <div class="button-user">
+                                <button class="new"><i class="bi bi-search"></i></button>
+                                <button class="new"><i class="bi bi-pencil-square"></i></button>
+                            </div>
+                        </div>
+                        <h3>History</h3>
+                        <div class="isi-histori">
+                            <a href="#">Cek kesehatan Benur saya</a>
+                            <a href="#">Cek kesehatan Benur saya</a>
+                            <a href="#">Cek kesehatan Benur saya</a>
+                        </div>
+                        <div class="profile">
+                            <div class="user">
+                                <img src="1.jpg" alt="image" class="profile-user">
+                                <p>Tifal Syah</p>
+                            </div>
+                            <div class="logout">
+                                <button class="button-logout"><i class="bi bi-arrow-bar-right"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="chat-container">
@@ -58,7 +89,7 @@
                 minWidth: 200.00,
                 scale: 1.00,
                 scaleMobile: 1.00,
-                color: 0x0ad1c8,
+                color:  0x10AFED,
                 backgroundColor: 0xffffff,
                 maxDistance: 21.00
             });

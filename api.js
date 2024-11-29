@@ -1,4 +1,4 @@
-const API_KEY = "AIzaSyAsmLvXFmR4Wcq7Vm20Lyijf3SFeSg6kQg";
+const API_KEY = "AIzaSyB1a8AoVUHFL23hljV5GCewt5HOPthNEBk";
 const ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${API_KEY}`;
 const botName = "ChatFluxi";
 let conversationHistory = [];
