@@ -1,3 +1,7 @@
+function isMobileDevice() {
+    return /Android|iPhone|iPad|iPod|BlackBerry|Windows Phone|Opera Mini|IEMobile|Mobile/i.test(navigator.userAgent);
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     const loader = document.getElementById("loader");
     setTimeout(() => {
@@ -25,6 +29,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     const userInput = document.getElementById("user-input");
+    if (isMobileDevice()) {
+        userInput.focus();
+    }
     const recordButton = document.getElementById("record-button");
 
     userInput.addEventListener("input", () => {

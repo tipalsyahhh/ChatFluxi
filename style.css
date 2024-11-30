@@ -6,11 +6,6 @@ body {
     overflow: hidden;
 }
 
-.container {
-    background: rgba(255, 255, 255, 0.274);
-    backdrop-filter: blur(6.4px);
-}
-
 .load {
     width: 100vw;
     height: 100vh;
@@ -32,7 +27,7 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    background-color: #f9f9f9;
+    background-color: transparent;
 }
 
 .spinner {
@@ -57,7 +52,7 @@ body {
 
 .foouter {
     height: calc(10vh - 20px);
-    background-color: #f1f7f7;
+    background-color: #000;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     padding: 10px;
     overflow: hidden;
@@ -73,14 +68,14 @@ body {
 }
 
 .text p {
-    color: #202020;
+    color: #fff;
     margin: 0;
     font-size: 12px;
 }
 
 .text h4 {
     font-weight: bold;
-    color: #000;
+    color: #fff;
     font-size: 18px;
     margin: 0;
 }
@@ -93,6 +88,7 @@ body {
     background-color: transparent;
     border: none;
     cursor: pointer;
+    color: #fff;
 }
 
 .navbar i {
@@ -105,10 +101,11 @@ body {
     right: 0;
     width: 300px;
     height: 100%;
-    background-color: #f1f7f7;
+    background-color: #000;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
     display: none;
     z-index: 99;
+    color: #fff;
 }
 
 .sidebar.active {
@@ -131,18 +128,19 @@ body {
 }
 
 .isi-histori a:hover {
-    background-color: #a0a0a0;
+    background-color: #f1f7f7;
     border-radius: 10px;
+    color: #000;
 }
 
 .isi-histori a {
     padding: 5px;
     text-decoration: none;
-    color: #000;
     height: 35px;
     display: flex;
     align-items: center;
     justify-content: start;
+    color: #fff;
 }
 
 .profile {
@@ -168,7 +166,6 @@ body {
 
 .user p {
     margin: 0;
-    color: #000;
 }
 
 .logout {
@@ -183,6 +180,7 @@ body {
     background: none;
     border: none;
     cursor: pointer;
+    color: #fff;
 }
 
 .close-sidebar,
@@ -190,9 +188,9 @@ body {
     background: none;
     border: none;
     font-weight: bold;
-    color: #000;
     font-size: 25px;
     cursor: pointer;
+    color: #fff;
 }
 
 .chat-container {
@@ -230,7 +228,7 @@ body {
 .record-btn {
     border: none;
     background-color: transparent;
-    color: #000;
+    color: #fff;
     cursor: pointer;
     font-size: 25px;
     font-weight: bold;
@@ -245,7 +243,7 @@ body {
 .files {
     border: none;
     background-color: transparent;
-    color: #000;
+    color: #fff;
     cursor: pointer;
     font-size: 25px;
     font-weight: bold;
@@ -273,8 +271,8 @@ body {
 }
 
 .message-content.bot {
-    background-color: #f2f6fa;
-    color: #333;
+    background-color: #000;
+    color: #fff;
     border-top-left-radius: 0;
 }
 
@@ -283,7 +281,7 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 10px;
-    background-color: #fff;
+    background-color: #000;
     box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.1);
     z-index: 1;
     position: relative;
@@ -334,6 +332,8 @@ body {
     width: 100%;
     height: 100%;
     font-size: 15px;
+    color: #fff;
+    background-color: #000;
 }
 
 .send-btn {
@@ -356,7 +356,6 @@ body {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal-content {
@@ -418,6 +417,10 @@ body {
     font-size: 12px;
     display: flex;
     align-items: center;
+}
+
+#mute-button {
+   color: #fff;
 }
 
 @media (max-width: 768px) {
